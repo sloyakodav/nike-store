@@ -2,10 +2,14 @@ import React from "react";
 import Button from "./Button";
 import { arrowRight } from "../../assets/icons";
 import { shoes, statistics } from "../../constants";
+import { useDispatch, useSelector } from "react-redux";
+
 import { bigShoe1 } from "../../assets/images";
 import ShoeCard from "./ShoeCard";
-
 const Hero = () => {
+  useSelector((state) => {
+    console.log(state.nike);
+  });
   const changeBigShoeImage = () => {};
   return (
     <section
@@ -49,12 +53,12 @@ const Hero = () => {
           height={500}
           className="object-contain relative z-10"
         />
-        <div>
+        <div className="flex sm:gap-6 gap-4 absolute  -bottom-[5%] sm:left-[10%] max-sm:px-6">
           {shoes.map((e, index) => {
             return (
               <div key={index}>
                 <ShoeCard
-                  imgUrl={e.thumbnail}
+                  imgUrl={e}
                   changeBigShoeImage={changeBigShoeImage}
                   bigImage=""
                 />

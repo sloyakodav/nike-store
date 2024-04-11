@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {
-  nikeProducts: [],
-};
+import { bigShoe1 } from "../../assets/images";
+const initialState = { bigShoeImg: bigShoe1 };
+
 const NikeSLice = createSlice({
   name: "nike",
   initialState,
