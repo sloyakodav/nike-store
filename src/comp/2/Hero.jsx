@@ -1,15 +1,12 @@
 import React from "react";
 import Button from "./Button";
 import { arrowRight } from "../../assets/icons";
-import { shoes, statistics } from "../../constants";
+import { statistics } from "../../constants";
 import { useDispatch, useSelector } from "react-redux";
 
-import { bigShoe1 } from "../../assets/images";
 import ShoeCard from "./ShoeCard";
 const Hero = () => {
-  useSelector((state) => {
-    console.log(state.nike);
-  });
+  const { bigShoeImg, shoeData, shoes } = useSelector((state) => state.nike);
   const changeBigShoeImage = () => {};
   return (
     <section
@@ -47,7 +44,7 @@ const Hero = () => {
       </div>
       <div className="relative flex-1 justify-center flex items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
         <img
-          src={bigShoe1}
+          src={bigShoeImg}
           alt="big shoes 1"
           width={610}
           height={500}
@@ -57,11 +54,7 @@ const Hero = () => {
           {shoes.map((e, index) => {
             return (
               <div key={index}>
-                <ShoeCard
-                  imgUrl={e}
-                  changeBigShoeImage={changeBigShoeImage}
-                  bigImage=""
-                />
+                <ShoeCard img={e} />
               </div>
             );
           })}

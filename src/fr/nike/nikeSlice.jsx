@@ -1,11 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { bigShoe1 } from "../../assets/images";
-const initialState = { bigShoeImg: bigShoe1 };
+import { bigShoe1, bigShoe2, bigShoe3 } from "../../assets/images";
+import { shoes } from "../../constants";
+const initialState = {
+  bigShoeImg: bigShoe1,
+  shoeData: [bigShoe1, bigShoe2, bigShoe3],
+  shoes: shoes,
+};
 
 const NikeSLice = createSlice({
   name: "nike",
   initialState,
-  reducers: {},
+  reducers: {
+    changeShoeImg: (state, action) => {
+      console.log(action.payload);
+      state.bigShoeImg = action.payload;
+    },
+  },
 });
-export const {} = NikeSLice.actions;
+export const { changeShoeImg } = NikeSLice.actions;
 export default NikeSLice.reducer;
