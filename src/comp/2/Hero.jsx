@@ -3,11 +3,15 @@ import Button from "./Button";
 import { arrowRight } from "../../assets/icons";
 import { statistics } from "../../constants";
 import { useDispatch, useSelector } from "react-redux";
-
+// import { collectionBackgroundDarkMode } from "../../assets/images/collection-background-dark-mode";
+// import { thumbnailBackgroundDarkMode } from "assets/images/thumbnail-background-dark-mode.svg";
+// console.log(thumbnailBackgroundDarkMode);
 import ShoeCard from "./ShoeCard";
 const Hero = () => {
-  const { bigShoeImg, shoeData, shoes } = useSelector((state) => state.nike);
-  const changeBigShoeImage = () => {};
+  const { bigShoeImg, shoeData, shoes, darkMode } = useSelector(
+    (state) => state.nike
+  );
+
   return (
     <section
       id="home"
@@ -42,7 +46,10 @@ const Hero = () => {
           })}
         </div>
       </div>
-      <div className="relative flex-1 justify-center flex items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
+      <div
+        className={`relative flex-1 justify-center flex items-center xl:min-h-screen max-xl:py-40 bg-primary "bg-hero "
+    bg-cover bg-center`}
+      >
         <img
           src={bigShoeImg}
           alt="big shoes 1"

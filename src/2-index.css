@@ -4,6 +4,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.bg-hero-th-black {
+  background: url("assets/images/thumbnail-background-dark-mode.svg");
+}
+.bg-hero-col-black {
+  background: url("assets/images/collection-background-dark-mode.svg");
+}
 
 * {
   margin: 0;
